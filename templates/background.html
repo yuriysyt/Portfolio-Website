@@ -1,0 +1,124 @@
+{% extends "clean_design.html" %}
+
+{% block title %}
+    Yurii Sytnichenko - My Background
+{% endblock %}
+
+{% block main %}
+
+    <section class="home-content">
+        <div class="row showcase-row justify-content-center">
+            <div class="col-md-10">
+                <div class="text-center">
+                    <h2 class="background-header">My Journey</h2>
+                </div>
+            </div>
+        </div>
+    
+        <div class="schedule">
+            <div class="container-schedule">
+                <div class="content">
+                    <h2>2018</h2>
+                    <p>
+                        <a target="_blank" class="background-link" href="https://en.wikipedia.org/wiki/Boeing_Vertol_CH-46_Sea_Knight">Lua scripting:</a>
+                        
+                            <li>Began learning for the GTA SAMP multiplayer modification, developing 3 successful projects that streamlined processes and generated income opportunities while prioritizing aesthetically pleasing design.</li>
+                            <li>Completed the Google Online Course for Python, laying the foundation for future development.</li>
+                        
+                    </p>
+                </div>
+            </div>
+            <div class="container-schedule">
+                <div class="content">
+                    <h2>2019</h2>
+                    <p>
+                        <a target="_blank" class="background-link" href="https://en.wikipedia.org/wiki/Boeing_Vertol_CH-46_Sea_Knight">Python:</a>
+                        
+                            <li>Immersing myself in literature and self-study. </li>
+                            <li>Leveraging the asynchronous Aiogram library, I created a homework assistance chatbot to provide students with guidance, explanations, and educational resources, enhancing their learning experience.</li>
+                        
+                    </p>
+                </div>
+            </div>
+            <div class="container-schedule">
+                <div class="content">
+                    <h2>2020</h2>
+                    <p>
+                        <a target="_blank" class="background-link" href="https://en.wikipedia.org/wiki/Boeing_Vertol_CH-46_Sea_Knight">JavaScript and TWITCH API:</a>
+                        Created a Twitch Extension for DonationAlerts using JavaScript and the Twitch API, enabling real-time display of top donors during live streams.
+                    </p>
+                </div>
+            </div>
+            <div class="container-schedule">
+                <div class="content">
+                    <h2>2021</h2>
+                    <p>
+                        <a target="_blank" class="background-link" href="https://en.wikipedia.org/wiki/Boeing_Vertol_CH-46_Sea_Knight">Web Development:</a>
+                        Developed a full-stack web application using React, Node.js, and MongoDB, featuring a responsive user interface, secure authentication, and real-time data synchronization, demonstrating proficiency in modern web technologies.
+                    </p>
+                </div>
+            </div>
+            <div class="container-schedule">
+                <div class="content">
+                    <h2>2023</h2>
+                    <p>Studied at Kaplan International College:</p>
+                    
+                        <li>Worked on C++ projects: MysteryWorld, Password Generator</li>
+                        <li>Worked on Python projects: Website (Flask, Bootstrap), AI Maze Generator, Flappy Bird</li>
+                        <li>Contributed to an open-source project on GitHub, implementing new features and optimizing performance through code refactoring, showcasing collaboration skills and commitment to the developer community.</li>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="row showcase-row justify-content-center">
+            <div class="col-md-8">
+                <hr/>
+            </div>
+        </div>
+
+        <div class="row background-row justify-content-center">
+            <div class="col-12 p-0 text-center">
+                <h2 class="background-header">My skills:</h2>
+            </div>
+        </div>
+        <div class="row row-legend justify-content-center">
+            <div class="col-12 p-0 text-center">
+                <p>
+                    1 - Basic<span class="background-legend"></span>
+                    2 - Novice<span class="background-legend"></span>
+                    3 - Intermediate
+                </p>
+                <p class="m-0">
+                    4 - Advanced<span class="background-legend"></span>
+                    5 - Expert
+                </p>
+            </div>
+        </div>
+        <div class="row row-legend justify-content-center background-header">
+            Hover cursor over bars for more information
+        </div>
+        <div class="row background-row justify-content-center">
+            {% for topic, one_skill in skills %}
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="skill-cat text-center">
+                        <h5>{{ topic }}</h5>
+                    </div>
+                    <div class="row">
+                        {% for item in one_skill %}
+                            {% set level = item[1]/5*100 %}
+                            <div class="col-12 text-right">
+                                <p>{{ item[0] }} - {{ item[1] }}</p>
+                                <div class="skill-bar">
+                                    <div class="skill-spec" style="width: {{ level }}%;">
+                                    </div>
+                                    <span class="tooltiptext">{{ item[2] }}</span>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "clean_design.html" %}
+
+{% block title %}
+    News
+{% endblock %}
+
+{% block main %}
+{#    row 1#}
+    <section class="main_content">
+        <div class="container p-0">
+            <div class="row showcase-row justify-content-center">
+            {% for news in newss %}
+{#                <div class="col-12 col-md-5 justify-content-center">#}
+{#                    <div class="showcase-row justify-content-center">#}
+{#                        <div class="text-center">#}
+{#                            <h4 class="intro_heading"> {{project[0]}} </h4>#}
+{#                        </div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="footer_message text-center">#}
+{#                        <a target="_blank" href={{ project[1] }}>#}
+{#                            <img class="showcase-img" src="{{  project[2] }}">#}
+{#                        </a>#}
+{#                         <h6>{{ project[3] }}</h6>#}
+{#                    </div>#}
+{##}
+{#                </div>#}
+
+                <div class="col-12 col-md-5">
+                    <div class="row justify-content-center">
+                        <div class="text-center">
+
+                            <h4 class="intro_heading">{{ news[0] }}</h4>
+
+                        </div>
+                    </div>
+{#                    <div class="row justify-content-center">#}
+{#                        <div class="row welcome-img text-center">#}
+{#                            <h6>{{ project[0] }}</h6>#}
+{#                        </div>#}
+{#                    </div>#}
+                    <div class="row justify-content-center">
+                        <a target="_blank" href="{{ news[1] }}">
+                            <h6 class="justify-content-center row">{{ news[3] }}</h6>
+                            <img class="showcase-img" src="{{ news[2] }}">
+                        </a>
+                    </div>
+                    <div class="footer_message text-center">
+
+                    </div>
+                </div>
+
+            {% endfor %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

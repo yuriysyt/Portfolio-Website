@@ -1,0 +1,59 @@
+{% extends "clean_design.html" %}
+
+{% block styles %}
+    <style>
+        .showcase-img {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .showcase-img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+{% endblock %}
+
+{% block main %}
+    <section class="main_content">
+        <div class="container p-0">
+            <div class="row showcase-row justify-content-center">
+                <div class="col-12 col-md-5">
+                    <!-- Featured project -->
+                    <div class="row justify-content-center">
+                        <div class="text-center">
+                            <h2 class="intro_heading">Featured project</h2>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <a target="_blank" href="{{ project[0][1] }}">
+                            <img class="showcase-img" src="{{ project[0][2] }}">
+                        </a>
+                    </div>
+                    <div class="footer_message text-center">
+                        <p>
+                            <a class="background-link" href="/showcase">Go here</a> to see more projects.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-5">
+                    <!-- Featured news post -->
+                    <div class="row justify-content-center">
+                        <div class="text-center">
+                            <h2 class="intro_heading">Featured news post</h2>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <a target="_blank" href={{ news[0][1] }}>
+                            <img class="showcase-img" src="{{  news[0][2] }}">
+                        </a>
+                    </div>
+                    <div class="footer_message text-center">
+                        <p>
+                            And <a class="background-link" href="/news">Go here</a> to see more news posts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
